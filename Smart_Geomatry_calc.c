@@ -2,79 +2,85 @@
 
 int main() {
     int choice;
-    printf("===============================\n");
-    printf("      Geometry Calculator\n"); 
-    printf("1. Area of Circle\n");
-    printf("2. Area of Square\n");
-    printf("3. Volume of CUBE\n");
-    printf("4. Simple Calculator\n");
-    printf("===============================\n");
-    printf("Enter Your Choice 1-4: ");
-    scanf("%d", &choice); 
+    char exit_choice;
 
-    if (choice == 1) {
-        float radius;
-        printf("\n--- Circle Area Calculator ---\n\n");
-        printf("Enter radius of Circle: ");
-        scanf("%f", &radius);
-        float area = 3.1416 * radius * radius;
-        printf("Area of Circle: %.2f square units\n", area);
-    }
+    do {
+        printf("\n===============================\n");
+        printf("       geometry calculator\n");
+        printf("===============================\n");
+        printf("1. area of circle\n");
+        printf("2. area of square\n");
+        printf("3. volume of cube\n");
+        printf("4. simple calculator\n");
+        printf("===============================\n");
 
-    else if (choice == 2) {
-        int side;
-        printf("\n--- Square Area Calculator ---\n\n");
-        printf("Enter side of Square: ");
-        scanf("%d", &side);
-        int area = side * side;
-        printf("Area of Square: %d square units\n", area);
-    }
+        printf("enter your choice 1-4: ");
+        scanf("%d", &choice);
 
-    else if (choice == 3) {
-        int h, w, d;
-        printf("\n--- CUBE Volume Calculator ---\n\n");
-        printf("Enter Height: ");
-        scanf("%d", &h);
-        printf("Enter Width: "); 
-        scanf("%d", &w);
-        printf("Enter Depth: ");
-        scanf("%d", &d);
-        int volume = h * w * d;
-        printf("Volume of CUBE: %d cubic units\n", volume);
-    }
+        if (choice == 1) {
+            float radius;
+            printf("\n--- circle area calculator ---\n\n");
+            printf("enter radius of circle: ");
+            scanf("%f", &radius);
 
-    else if (choice == 4) {
-        int a, b;
-        printf("\n--- Simple Calculator ---\n\n");
-        printf("Enter first Number: ");
-        scanf("%d", &a);
-        printf("Enter second Number: ");
-        scanf("%d", &b); 
-        int sum = a + b;
-        int sub = a - b;
-        int mult = a * b;
-        printf("\nResult: \n");
-        printf("Addition: %d + %d = %d\n", a, b, sum);
-        printf("Subtraction: %d - %d = %d\n", a, b, sub);
-        printf("Multiplication: %d * %d = %d\n", a, b, mult);
-        
-        if(b != 0) {
-            int div = a / b;
-            printf("Division: %d / %d = %d\n", a, b, div);
-        } else {
-            printf("Division: Cannot divide by zero!\n");
+            float area = 3.1416 * radius * radius;
+            printf("area of circle: %.2f square units\n", area);
         }
 
-    }
+        else if (choice == 2) {
+            int side;
+            printf("\n--- square area calculator ---\n\n");
+            printf("enter side of square: ");
+            scanf("%d", &side);
 
-    else {
-        printf("\nInvalid Choice! Please Try Again.\n\n");
-    }
+            int area = side * side;
+            printf("area of square: %d square units\n", area);
+        }
 
-    printf("\n===================================\n");
-    printf("Thank you for using the calculator!\n");
-    printf("===================================\n");
+        else if (choice == 3) {
+            int h, w, d;
+            printf("\n--- cube volume calculator ---\n\n");
+            printf("enter height: ");
+            scanf("%d", &h);
+            printf("enter width: ");
+            scanf("%d", &w);
+            printf("enter depth: ");
+            scanf("%d", &d);
+
+            int volume = h * w * d;
+            printf("volume of cube: %d cubic units\n", volume);
+        }
+
+        else if (choice == 4) {
+            int a, b;
+            printf("\n--- simple calculator ---\n\n");
+            printf("enter first number: ");
+            scanf("%d", &a);
+            printf("enter second number: ");
+            scanf("%d", &b);
+
+            int sum = a + b;
+            int sub = a - b;
+            int mult = a * b;
+
+            printf("\nresult: \n");
+            printf("addition: %d + %d = %d\n", a, b, sum);
+            printf("subtraction: %d - %d = %d\n", a, b, sub);
+            printf("multiplication: %d * %d = %d\n", a, b, mult);
+        }
+
+        else {
+            printf("\ninvalid choice! please enter between 1-4.\n");
+        }
+
+        printf("\ndo you want to continue? (y/n): ");
+        scanf(" %c", &exit_choice);
+
+    } while (exit_choice == 'y' || exit_choice == 'Y');
+
+    printf("\n=====================================\n");
+    printf("\nThank you for using this Calculuter!\n");
+    printf("\n=====================================\n");
 
     return 0;
-
 }
